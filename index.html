@@ -6,7 +6,7 @@
 
 
 </head>
-<body>
+<body style="background-color:slategray">
 <h1 style="font-family:Impact;color:dodgerblue;font-size:70px">ICeMan's codes</h1>
 <h3>The place I keep my things</h3>
 <a href="https://www.facebook.com/iceman4l">Fan page</a>
@@ -15,28 +15,86 @@
 <img src="http://upload.wikimedia.org/wikipedia/en/8/8e/Sub-Zero_%28Mortal_Kombat%29.png" />
 </a>
 
-<h3>Top 5 Cars</h3>
-    <ul>
-        <li style="color:orangered;font-family:Arial">Skyline GT-R</li>
+<h3 style="text-align:center">Top 5 Cars</h3>
+    <ul style="background-color:white">
+        <li style="color:orangered;font-family:Arial"><strong>Skyline GT-R</strong></li>
         <li>Bugatti Veyron</li>
         <li>Ashton Martin</li>
         <li>Lamborghini SVT</li>
-        <li style="color:royalblue">Tesla model S</li>
+        <li style="color:royalblue"><em>Tesla model S</em></li>
 
     </ul>
+
+<table border ="4px">
+    <thread>
+        <tr>
+            <th colspan="5">My Vehicle History</th>
+        </tr>
+        <tr>
+            <th>Vehicle Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Color</th>
+            <th>age acquired</th>
+        </tr>
+    <tr>
+        <td>Mitsubishi</td>
+        <td>Galant</td>
+        <td>2001</td>
+        <td style="color:maroon">Maroon</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>Mitsubishi</td>
+        <td>Eclipse</td>
+        <td>2000</td>
+        <td style="color:silver">Silver</td>
+        <td>17</td>
+    </tr>
+    <tr>
+        <td>BMW</td>
+        <td>325i</td>
+        <td>2001</td>
+        <td style="color:Silver">Silver</td>
+        <td>19</td>
+    </tr>
+    <tr>
+        <td>Acura</td>
+        <td>TL</td>
+        <td>2004</td>
+        <td style="color:Silver">Silver</td>
+        <td>22</td>
+    </tr>
+
+
+
+<table>
 <p>testing</p>
 <p style="font-size: 20px">testing</p>
 
+<input id="name" type="text">
+<button id="addOne"> Add One</button><!--buttons-->
 
-
-
-
-
+<button id="touchThis"> Touch</button>
 
 <script type="text/javascript" src="Three.js"></script>
+<script src="Jquery.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
 
 <script>
 
+
+
+    $('#addOne').click(function(){
+        var value = $('#name').val();
+        $('ul').append('<li>' + value + '</li>');
+
+    });
+
+    $('#touchThis').click(function(){alert("hot hot")});
 
 
 
@@ -44,5 +102,6 @@
 
 
 </script>
+
 </body>
 </html>
