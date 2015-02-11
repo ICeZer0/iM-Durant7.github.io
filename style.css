@@ -1,0 +1,127 @@
+p{
+    color: #a6deff;
+
+}
+span{
+    color: #2280ff;
+    font-family: cursive;
+    background-color: black;
+}
+
+h2{
+
+    background-color: #526e83;
+    text-align: center;
+
+}
+
+div{
+    height: 80px;
+    width: 80px;
+    border-color: #6495ED;
+    background-color: #BCD2EE;
+    border-style: dashed;
+    border-radius: 100px; /*making circles*/
+    margin: auto;
+    text-align: center;
+}
+
+* ul {
+    border: 2px dashed #ffffff;
+
+}
+
+td img {
+
+    height: 150px;
+    width: 150px;
+    box-shadow: none;
+}
+a {
+    //text-decoration: none;
+    color: rgba(254, 254, 248, 0.99);
+    font-family: Verdana, sans-serif;
+}
+
+.cars{
+    color: #526e83;
+    font-family: monospace,sans-serif;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #cc0000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:visited{
+color: black;
+}
+
+a:link{
+
+text-decoration: none;
+
+}
+
+p:first-child{
+
+
+}
+
+.circles{
+    border-radius: 100px;
+    
+}
+
+.inline{
+    display: inline-block;
+}
+
+
+div {
+    height: 50px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #308014;
+    margin: auto;
+}
+
+/*div {
+    border-radius: 5px;
+}
+
+#header {
+    height: 50px;
+    background-color: #F38630;
+    margin-bottom: 10px;
+}
+
+.left {
+    height: 300px;
+    width: 150px;
+    background-color: #A7DBD8;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.right {
+    height: 300px;
+    width: 450px;
+    background-color: #E0E4CC;
+    float: right;
+    margin-bottom: 10px;
+}
+
+#footer {
+    height: 50px;
+    background-color: #69D2E7;
+
+    clear: both;
+}*/
+
+.fixed{
+    position: fixed; /*moves it around with the scroll*/
+}
