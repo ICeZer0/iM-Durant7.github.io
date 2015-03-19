@@ -3026,6 +3026,9 @@ jQuery.Fotorama = function ($fotorama, opts) {
       stageCursor();
       releaseAutoplay();
       changeAutoplay();
+
+      //Jose Araujo
+      that.playVideo();
     };
     ////console.timeEnd('bind onEnd');
 

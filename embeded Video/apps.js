@@ -2,9 +2,13 @@
  * Created by ICe on 3/10/15.
  */
 
-
+var fotorama;
 
 $(function(){
+    $("#fart").onclick(function() {
+        alert("fart");
+    });
+
    $('.fotorama').fotorama({
        width: 1000,
        height: 500,
