@@ -7,17 +7,18 @@ html, body {
 
 body {
     background: #151515; /* Old browsers */
-    background: -moz-linear-gradient(top, #151515 0%, #151515 100%); /* FF3.6+ */
+    background: -moz-linear-gradient(top, #dc0c0c 0%, #ff392d 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #151515), color-stop(100%, #151515)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #2d3b59 0%, #ffffff 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #cccccc 0%,#888888 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #cccccc 0%,#888888 100%); /* IE10+ */
-    background: linear-gradient(top,  #cccccc 0%,#888888 100%); /* W3C */
+    background: -webkit-linear-gradient(top, #2d3b59 0%, #fefef8 100%); /* Chrome10+,Safari5.1+  color edit */
+    background: -o-linear-gradient(top, #dc0c0c 0%, #ff392d 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #dc0c0c 0%, #dc0c0c 100%); /* IE10+ */
+    background: linear-gradient(top, #dc0c0c 0%, #dc0c0c 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#888888',GradientType=0 ); /* IE6-9 */
 }
 
 
 
+/* Fotorama style */
 .fotorama__arr:focus:after,
 .fotorama__fullscreen-icon:focus:after,
 .fotorama__html,.fotorama__img,.fotorama__nav__frame:focus .fotorama__dot:after,
