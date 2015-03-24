@@ -3027,7 +3027,7 @@ jQuery.Fotorama = function ($fotorama, opts) {
       releaseAutoplay();
       changeAutoplay();
 
-      //Jose Araujo
+      //Isaac Durant
       that.playVideo();
     };
     ////console.timeEnd('bind onEnd');
