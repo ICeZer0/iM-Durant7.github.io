@@ -9,7 +9,7 @@ body {
     background: #151515; /* Old browsers */
     background: -moz-linear-gradient(top, #dc0c0c 0%, #ff392d 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #151515), color-stop(100%, #151515)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #2d3b59 0%, #fefef8 100%); /* Chrome10+,Safari5.1+  color edit */
+    background: -webkit-linear-gradient(top, #d30d1a 0%, #fefef8 100%); /* Chrome10+,Safari5.1+  color edit */
     background: -o-linear-gradient(top, #dc0c0c 0%, #ff392d 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top, #dc0c0c 0%, #dc0c0c 100%); /* IE10+ */
     background: linear-gradient(top, #dc0c0c 0%, #dc0c0c 100%); /* W3C */
