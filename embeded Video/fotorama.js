@@ -1,6 +1,13 @@
 /*!
  * Fotorama 4.6.3 | http://fotorama.io/license/
  */
+var videoLength=[];
+
+videoLength[0]=128000;
+videoLength[1]=128400;
+videoLength[2]=100000;
+
+
 fotoramaVersion = '4.6.3';
 (function (window, document, location, $, undefined) {
   "use strict";
@@ -858,6 +865,7 @@ var $WINDOW = $(window),
 
     SCROLL_LOCK_TIMEOUT = 1400,
 
+    //autoPlay var
     AUTOPLAY_INTERVAL = 5000,
     MARGIN = 2,
     THUMB_SIZE = 64,
@@ -920,7 +928,7 @@ var $WINDOW = $(window),
       loop: false,
 
       autoplay: false,  //<------------------------------autoPLAY------
-      stopautoplayontouch: true,
+      stopautoplayontouch: false,
 
       keyboard: false,
 
@@ -1943,7 +1951,7 @@ jQuery.Fotorama = function ($fotorama, opts) {
       stamp = $.now(),
       stampClass = _fotoramaClass + stamp,
       fotorama = $fotorama[0],
-      data,
+      data,    //datastart
       dataFrameCount = 1,
       fotoramaData = $fotorama.data(),
       size,
@@ -2175,9 +2183,10 @@ jQuery.Fotorama = function ($fotorama, opts) {
     MS_POINTER && $wrap.toggleClass(wrapPanYClass, !stageShaftTouchTail.noSwipe);
   }
 
+    //isaac autoPlay
   function setAutoplayInterval (interval) {
     if (interval === true) interval = '';
-    opts.autoplay = Math.max(+interval || AUTOPLAY_INTERVAL, o_transitionDuration * 1.5);
+    opts.autoplay = Math.max(+interval || AUTOPLAY_INTERVAL, o_transitionDuration * 1.5); //set autoplay
   }
 
   /**
@@ -2219,7 +2228,7 @@ jQuery.Fotorama = function ($fotorama, opts) {
     arrsUpdate();
     stageWheelUpdate();
 
-    if (opts.autoplay) setAutoplayInterval(opts.autoplay);
+    if (opts.autoplay) setAutoplayInterval(opts.autoplay);//money maker
 
     o_thumbSide = numberFromMeasure(opts.thumbwidth) || THUMB_SIZE;
     o_thumbSide2 = numberFromMeasure(opts.thumbheight) || THUMB_SIZE;
@@ -2865,6 +2874,7 @@ jQuery.Fotorama = function ($fotorama, opts) {
     pausedAutoplayFLAG = !!($videoPlaying || stoppedAutoplayFLAG);
   }
 
+    //autoplay features
   function changeAutoplay () {
     //console.log('changeAutoplay');
 
@@ -2915,6 +2925,7 @@ jQuery.Fotorama = function ($fotorama, opts) {
 
   }
 
+   //money maker
   that.startAutoplay = function (interval) {
     if (that.autoplay) return this;
     pausedAutoplayFLAG = stoppedAutoplayFLAG = false;
@@ -2931,6 +2942,8 @@ jQuery.Fotorama = function ($fotorama, opts) {
     }
     return this;
   };
+
+    ///////////////////////////////////^^^ AUTOPLAY^^^^///////////////////
 
   that.show = function (options) {
     //console.log('that.show');
@@ -3029,6 +3042,7 @@ jQuery.Fotorama = function ($fotorama, opts) {
 
       //Isaac Durant
       that.playVideo();
+      setAutoplayInterval(interval || videoLength[index]);
     };
     ////console.timeEnd('bind onEnd');
 
@@ -3257,7 +3271,7 @@ jQuery.Fotorama = function ($fotorama, opts) {
 
   that.destroy = function () {
     that.cancelFullScreen();
-    that.stopAutoplay();
+    that.stopautoplay();
 
     data = that.data = null;
 
@@ -3321,8 +3335,10 @@ jQuery.Fotorama = function ($fotorama, opts) {
     }
 
     if (releaseAutoplayFLAG) {
+
       releaseAutoplay();
       changeAutoplay();
+
     }
   }
 
@@ -3377,16 +3393,18 @@ jQuery.Fotorama = function ($fotorama, opts) {
 
     if ($target.hasClass(videoPlayClass)) {
       that.playVideo();
+
     } else if (target === fullscreenIcon) {
       that.toggleFullScreen();
     } else if ($videoPlaying) {
-      target === videoClose && unloadVideo($videoPlaying, true, true);
+      target === videoClose && unloadVideo($videoPlaying, true, true);//come to video close
     } else {
       if (toggleControlsFLAG) {
         toggleControlsClass();
+
       } else if (opts.click) {
 
-        clickToShow({index: e.shiftKey || getDirectionSign(getDirection(e._x)), slow: e.altKey, user: true});
+          clickToShow({index: e.shiftKey || getDirectionSign(getDirection(e._x)), slow: e.altKey, user: true});
       }
     }
     ////console.timeEnd('onStageTap');

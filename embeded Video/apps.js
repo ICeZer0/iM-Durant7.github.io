@@ -5,9 +5,7 @@
 var fotorama;
 
 $(function(){
-    $("#fart").onclick(function() {
-        alert("fart");
-    });
+
 
    $('.fotorama').fotorama({
        width: 1000,
@@ -16,46 +14,45 @@ $(function(){
        shadows:true,
 
        thumbwidth: '80',
-       thumbheight: '80'
-
+       thumbheight: '80',
+       stopautoplayontouch: false,
+       startAutoplay: videoLength
 
 
    });
 
 
+    //var fotorama_div= document.getElementById("fotorama");
+    //console.log(fotorama_div);
+    //console.log(fotorama_div.class);
 
 });
 
 
-
-$(document).ready(function() {
-
-    $('a.youtube').YouTubePopup({
-
-
-        autoplay: 1,
-        draggable: true,
-
-    });
-
-    //$("button.youtube").YouTubePopup({
-    //
-    //    idAttribute: 'id'
-    //});
-
-    $("img.youtube").YouTubePopup({
-        idAttribute: 'id'
-    });
-
-
-});
 
 
 
 /*
-///above//
- $(document).ready(function() {
- $('.image-link').magnificPopup({type:'image'});
- });
+
+
+ <div class="fotorama__video-close"></div>
+
+
+
+ if (!that.autoplay) {
+ that.autoplay = true;
+ triggerEvent('startautoplay');
+ }
+
+
+ if (!opts.autoplay || pausedAutoplayFLAG) {
+ if (that.autoplay) {
+ that.autoplay = false;
+ triggerEvent('stopautoplay');
+ }
+
+ return;
+ }
+
 
 */
