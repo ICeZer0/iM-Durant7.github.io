@@ -8,13 +8,13 @@
   <!-- jQuery -->
   <script src="jquery-1.9.1.min2.js"></script>
 
+    <!-- This loads the YouTube IFrame Player API code -->
+    <script src="https://www.youtube.com/player_api"></script>
+
   <!-- Fotorama -->
   <link href="fotorama.css" rel="stylesheet">
   <script src="fotorama.js"></script>
   <script src="apps.js"></script>
-
-  <!-- This loads the YouTube IFrame Player API code -->
-<script src="https://www.youtube.com/player_api"></script>
   <!-- Just don’t want to repeat this prefix in every img[src] -->
   <base href="http://s.fotorama.io/okonechnikov/">
 
@@ -29,20 +29,25 @@
     <img width="100" height="100" src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/10806324_1801505026741602_3014265343742879711_n.jpg?oh=fd6703f2ab2a0415c34d5bcfe9cb8efa&oe=55B1F0E6&__gda__=1437815661_9f8498548a7309b1ce770dac53c776dc">
 </a>
 
+<object>
+    <param name="allownetworking" value="internal">
+</object>
 <!-- Fotorama -->
 <div id="fotorama" class="fotorama" data-nav="thumbs" data-loop="true" data-width="100%" data-height="700" data-keyboard="true"  data-arrows="true" data-swipe="true" data-ratio="800/600" data-max-width="100%" >
 
-   <!-- Tk20 --> <a class="youtube" href="https://www.youtube.com/watch?v=nnVlM9XIijI&feature=youtu.be&rel=0" frameborder="0" data-caption="TK20: a smart choice"> video 1</a>
-    <!-- 2 Tk20 --> <a href="https://www.youtube.com/watch?v=E_5o7FdxvOs&rel=0" data-caption="Here we have a short bit explaining the great qualities that Tk20 has to offer for its members. "></a>
-    <!-- final Tk20 --><a width="854" height="510" href="https://www.youtube.com/watch?v=6-mH38nPEyg&rel=0" data-caption="Tk20 Assessment Solutions at Work"> </a>
-    <a width="854" height="510" href="video-iframe.html" data-video="true" data-img="https://pbs.twimg.com/profile_images/473574408758386689/jcE75fVE.png"> <img src="https://pbs.twimg.com/profile_images/473574408758386689/jcE75fVE.png"></a>
+   <!-- Tk20 --> <a class="youtube" href="https://www.youtube.com/watch?v=nnVlM9XIijI&feature=youtu.be&rel=0&autohide=1&controls=0" frameborder="0" data-caption="TK20: a smart choice"> video 1</a>
+    <!-- 2 Tk20 --> <a href="https://www.youtube.com/watch?v=E_5o7FdxvOs&modestbranding=1&rel=0&autohide=1&controls=0" data-caption="Here we have a short bit explaining the great qualities that Tk20 has to offer for its members. "></a>
+    <!-- final Tk20 --><a width="854" height="510" href="https://www.youtube.com/watch?v=6-mH38nPEyg&rel=0&autohide=1&controls=0" data-caption="Tk20 Assessment Solutions at Work"> </a>
+    <a width="854" height="510" type="video/mp4" href="Login_Video_File.mp4" data-video="true" data-img="https://pbs.twimg.com/profile_images/473574408758386689/jcE75fVE.png"> <img src="https://pbs.twimg.com/profile_images/473574408758386689/jcE75fVE.png"></a>
 
 
-    <a width="854" height="510"  href="https://www.youtube.com/watch?v=t8g-iYGHpEA&rel=0" frameborder="0"  > </a>
+
+    <a width="854" height="510"  href="https://www.youtube.com/watch?v=t8g-iYGHpEA&modestbranding=1" frameborder="0"  > </a>
 
 
 </div>
 
+<!--&modestbranding=1 rid ride of youtube top bar-->
 
 </body>
 </html>

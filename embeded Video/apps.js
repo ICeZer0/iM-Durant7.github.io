@@ -2,6 +2,24 @@
  * Created by ICe on 3/10/15.
  */
 
+//(function () {
+//    var location = window.document.location;
+//
+//    var preventNavigation = function () {
+//        var originalHashValue = location.hash;
+//
+//        window.setTimeout(function () {
+//            location.hash = 'preventNavigation' + ~~ (9999 * Math.random());
+//            location.hash = originalHashValue;
+//        }, 0);
+//        console.log("no can do");
+//    };
+//
+//    window.addEventListener('beforeunload', preventNavigation, false);
+//    window.addEventListener('unload', preventNavigation, false);
+//})();
+
+
 var fotorama;
 
 $(function(){

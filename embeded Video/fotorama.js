@@ -1,11 +1,6 @@
 /*!
  * Fotorama 4.6.3 | http://fotorama.io/license/
  */
-var videoLength=[];
-
-videoLength[0]=128000;
-videoLength[1]=128400;
-videoLength[2]=100000;
 
 
 fotoramaVersion = '4.6.3';
@@ -3042,7 +3037,7 @@ jQuery.Fotorama = function ($fotorama, opts) {
 
       //Isaac Durant
       that.playVideo();
-      setAutoplayInterval(interval || videoLength[index]);
+      setAutoplayInterval(interval);
     };
     ////console.timeEnd('bind onEnd');
 
@@ -3289,6 +3284,7 @@ jQuery.Fotorama = function ($fotorama, opts) {
     var dataFrame = activeFrame,
         video = dataFrame.video,
         _activeIndex = activeIndex;
+      console.log(dataFrame);
 
     if (typeof video === 'object' && dataFrame.videoReady) {
       o_nativeFullScreen && that.fullScreen && that.cancelFullScreen();
@@ -3298,6 +3294,7 @@ jQuery.Fotorama = function ($fotorama, opts) {
       }, function () {
         if (_activeIndex === activeIndex) {
           dataFrame.$video = dataFrame.$video || $($.Fotorama.jst.video(video));
+            console.log(dataFrame);
           dataFrame.$video.appendTo(dataFrame[STAGE_FRAME_KEY]);
 
           $wrap.addClass(wrapVideoClass);
@@ -3312,12 +3309,12 @@ jQuery.Fotorama = function ($fotorama, opts) {
         }
       });
     }
-
     return this;
   };
 
   that.stopVideo = function () {
     unloadVideo($videoPlaying, true, true);
+      console.log('not playing 3');
     return this;
   };
 
@@ -3325,6 +3322,7 @@ jQuery.Fotorama = function ($fotorama, opts) {
     if (unloadActiveFLAG) {
       $wrap.removeClass(wrapVideoClass);
       $videoPlaying = false;
+        console.log('not playing');
 
       stageNoMove();
     }
@@ -3398,6 +3396,7 @@ jQuery.Fotorama = function ($fotorama, opts) {
       that.toggleFullScreen();
     } else if ($videoPlaying) {
       target === videoClose && unloadVideo($videoPlaying, true, true);//come to video close
+        console.log('notplayng 2');
     } else {
       if (toggleControlsFLAG) {
         toggleControlsClass();
@@ -3715,15 +3714,30 @@ return __p
 $.Fotorama.jst.video = function(v) {
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
 function print() { __p += __j.call(arguments, '') }
-__p += '<div class="fotorama__video"><iframe src="';
- print((v.type == 'youtube' ? v.p + 'youtube.com/embed/' + v.id +'?autoplay=1' : v.type == 'vimeo' ? v.p + 'player.vimeo.com/video/' + v.id + '?autoplay=1&badge=0' : v.id)  + (v.s && v.type != 'custom' ? '&' + v.s : '')) ;
+__p += '<div class="fotorama__video"><iframe id="videoPlayer" src="';
+print((v.type == 'youtube' ? v.p + 'youtube.com/embed/' + v.id +'?autoplay=1' : v.type == 'vimeo' ? v.p + 'player.vimeo.com/video/' + v.id + '?autoplay=1&badge=0' : v.id)  + (v.s && v.type != 'custom' ? '&' + v.s : '')) ;
 __p += '" frameborder="0" allowfullscreen></iframe></div>\n';
-return __p
+//var player;
+//    function onYoutubeIframeAPIReady(){
+//        player = new YT.Player('fotorama', {
+//            height: '390',
+//            width:'640',
+//            videoId: v.id,
+//            events: {
+//                'onStateChange': onPlayerStateChange
+//            }
+//        });
+//    }
+    console.log(__p);
+
+return __p;
 };
 $(function () {
   $('.' + _fotoramaClass + ':not([data-auto="false"])').fotorama();
 });
 })(window, document, location, typeof jQuery !== 'undefined' && jQuery);
 
-
+function onPlayerStateChange(event){
+    console.log(event);
+}
 //////////////////////////////////////////////////////////////
