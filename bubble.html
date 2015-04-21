@@ -1,0 +1,68 @@
+<html> 
+<head>
+<title>BUBBLE SORT</title>
+</head>
+<body>
+
+	<script>
+
+		var swapsMade=true;
+		//array of n unsorted ints where n>=2
+		var arrayA=[1,0,7,6,3,2,9,5,8,4]; //arrayA.length; from http://www.w3schools.com/jsref/jsref_length_array.asp
+		var n=arrayA.length;
+		
+		document.write("original array: "+ arrayA);
+		document.write("\n");
+		//if (swaps were made) repeat process
+		do {
+
+			swapsMade=false;
+
+			//check firstNum with secondNum
+			for(var i=0;i<n-1;i++){
+
+				//if 2nd num is > 1st num swap
+				if(arrayA[i]>arrayA[i+1]){
+
+					//swap
+					var tempSwap=arrayA[i+1];
+					arrayA[i+1] = arrayA[i];
+					arrayA[i] = tempSwap;
+
+					swapsMade=true;
+				}	
+
+				//check all the way up to n-2 and n-1
+				if(n-1>n-2){
+					//test output
+					//alert("it works"); infinite loops
+					console.log("are you there"); //makes sure sorted finished
+				}
+
+			}
+
+
+
+		}while(swapsMade==true);
+		//if no swaps were made return true
+
+		console.log(arrayA); //sorted array
+
+
+		document.write(arrayA);
+	
+
+	</script>
+
+	<tr>
+		<td style="width:50%; text-align:right;"> Sorted Array: </td>
+
+		<td  style="width:50%; text-align:left;">
+
+			<div id="sortedArray" onclick="getValue()"> click</div>
+		</td>
+		
+	</tr>
+
+</body>
+</html> 
