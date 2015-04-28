@@ -27,13 +27,14 @@ function onYouTubeIframeAPIReady(){
         //videoId: '_nQDU7HOStc', //player.loadVideoById(videoId:String, startSeconds:Number, suggestedQuality:String):Void
         playerVars: {
             listType:'playlist',
-            list: 'PL1DD10E84B9B08A35'
+            list: 'PL1DD10E84B9B08A35',
+            'autoplay': 1,
+            'controls': 0
         },
         events:{
             'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange,
-            'controls': 0,
-            'autohide': 1
+            'onStateChange': onPlayerStateChange
+
         }
 
     });
