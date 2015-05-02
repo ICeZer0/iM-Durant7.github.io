@@ -183,21 +183,29 @@ function addElement( ){
                 //button.push(button);
                 //List.appendChild(div);
 
+            var k=0;
+
+            button.onclick = function () {
+
+                player.loadVideoById(playerList[k++]);
+                console.log("thsi is " +playerList[k++]);
+            };
 
 
         }
 
-    if(j = counter)
-        button.onclick = function () {
 
-            player.loadVideoById(playerList[j]);
-            console.log("thsi is " +playerList[j]);
-        };
+
 
 
 }
 
 ////////////////////////////////////////////////
+
+
+
+
+
 ////image clicks. need to
 //$("#image1").click(function(){
 //    player.loadVideoById('M7lc1UVf-VE');
