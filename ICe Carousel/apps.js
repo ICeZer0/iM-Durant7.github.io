@@ -47,15 +47,6 @@ function onPlayerReady(event){
 
     event.target.playVideo();
 
-    //loading playlist into player using playerVArs instead above
-    //event.target.loadPlaylist({
-    //    list: "UUPW9TMt0le6orPKdDwLR93w",
-    //    index: 1,
-    //    startSeconds: 10,
-    //    suggestedQuality: "small"
-    //});
-
-
 
 }
 
@@ -109,37 +100,24 @@ $(".ff").click(function(){
 
     player.nextVideo();
 
-    //playNextVideo();
-    //player.loadVideoById(nextVid);
-
-    //videoList();
 
 });
 
 $(".rw").click(function(){
 
-    //playPreviousVideo();
-    //player.loadVideoById(prevVid);
+
     player.previousVideo();
 
 
 });
 
 
-//function videoList(){
-//
-//    var playerList = player.getPlaylist();
-//
-//    //console.log(playerList);
-//
-//    for(var i=0; i<playerList.length; i++){
-//        console.log(playerList[i]);
-//
-//    }
-//
-//}
-
 var buttonsDiv = document.getElementById('buttons');
+
+
+//youtube api should have a video index to tell where video is
+//for loop can check if videoindex = the img id of the button clicked
+//then it will switch to that video
 
 function addElement( ){
 
@@ -196,119 +174,6 @@ function addElement( ){
 
 
 
-
-
 }
 
 ////////////////////////////////////////////////
-
-
-
-
-
-////image clicks. need to
-//$("#image1").click(function(){
-//    player.loadVideoById('M7lc1UVf-VE');
-//});
-//
-//$("#image2").click(function(){
-//    player.loadVideoById('1blZpyhlRJA');
-//});
-//$("#image3").click(function(){
-//    player.loadVideoById('kr5PoOpsnjg');
-//});
-//$("#image4").click(function(){
-//    player.loadVideoById('55QUQHm2B5A');
-//});
-//
-//
-////image clicks. need to
-//$(".slideVid").click(function(){
-//    player.loadVideoById('M7lc1UVf-VE');
-//});
-//
-//$("#image2").click(function(){
-//    player.loadVideoById('1blZpyhlRJA');
-//});
-//$("#image3").click(function(){
-//    player.loadVideoById('kr5PoOpsnjg');
-//});
-//$("#image4").click(function(){
-//    player.loadVideoById('55QUQHm2B5A');
-//});
-
-//each video url in order
-// tesla/jay/spider/apple/starwars/skydiving/tests/counterstrike/s6
-//var videoArray = [
-//    '_nQDU7HOStc',
-//    'odThhIA2gUM',
-//    'DlM2CWNTQ84',
-//    'kr5PoOpsnjg',
-//    'S3PPXX9fa5U',
-//    '55QUQHm2B5A',
-//    'fHfHSq7PVDU',
-//    'k9pCiHf61GY',
-//    'KuaOGF8tPfA'
-//];
-//var nextVid;
-//var prevVid;
-
-
-//plays next video in array
-//function playNextVideo() {
-//    //what video is active   player.getVideoUrl():String
-//    // Returns the YouTube.com URL for the currently loaded/playing video.
-//    //var url = player.getVideoUrl();
-//    console.log(player.getPlaylist());
-//
-//    console.log("next vid : ");
-//    //method chaining////
-//    var quickID = player.getVideoUrl().split("v=")[1];
-//    console.log(quickID);
-//
-//}
-    //for (i = 0; i <= videoArray.length; i++) {
-    //
-    //    if (quickID == videoArray[videoArray.length-1]) {
-    //        nextVid = videoArray[0];
-    //    }
-    //    else if (quickID == videoArray[i]) {
-    //        nextVid = videoArray[i + 1];
-    //    }
-    //
-    //
-    //}
-
-
-// take a URL string and get a piece of it.
-//log way refer to method chaing
-//        var splitURL = url.split("=");
-//        var ID = splitURL[1];
-//        console.log(ID);
-
-
-
-
-////for rw button to go through videos
-//function playPreviousVideo(){
-//
-//    var ID = player.getVideoUrl().split("=")[1];
-//
-//    for(i=0;i<videoArray.length;i++){
-//
-//        if(ID == videoArray[0]){
-//            prevVid = videoArray[videoArray.length-1];
-//        }
-//        else if(ID == videoArray[i]){
-//            prevVid = videoArray[i-1];
-//        }
-//    }
-//
-//
-//}
-
-
-
-
-/////
-
