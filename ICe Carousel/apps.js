@@ -3,8 +3,7 @@
  */
 
 //use youtube api to create video
-//video should have a playlist...carousel??
-//maybe ign type
+//video should have a playlist...
 //youtube should be disabled so that user cant go to youtube
 //use pause and play buttons to allow user to still take control of a video
 
@@ -21,44 +20,39 @@ var player;
 function onYouTubeIframeAPIReady(){
 
     player = new YT.Player('player', {
-        height: '750',
-        width: '1280',
+        height: '1200',
+        width: '1780',
         //playlistId: 'PL1DD10E84B9B08A35'
         //videoId: '_nQDU7HOStc', //player.loadVideoById(videoId:String, startSeconds:Number, suggestedQuality:String):Void
         playerVars: {
             listType:'playlist',
-            list: 'PL1DD10E84B9B08A35'
+            list: 'PL1DD10E84B9B08A35', //'PLwyv96l14uwm0HoKlOgfJ7vX7oJAEQssf' //'PL1DD10E84B9B08A35'
+            'controls': 0,
+            'autohide': 1,
+            'rel': 0
         },
         events:{
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange,
-            'controls': 0,
-            'autohide': 1
         }
-
-
     });
-
-
 }
 
 //API will call this function when player is ready
 function onPlayerReady(event){
-
     event.target.playVideo();
-
-
 }
 
 //API calls when player state changes
 //playing video = state=1
 var done= false;
 function onPlayerStateChange(event){
-    console.log(event);
+
     if (event.data == YT.PlayerState.PLAYING && !done){
         //setTimeout(stopVideo, 6000);
         done=true;
 
+        //loads the videoplaylist sidebar elements
         addElement();
     }
     //checkign that the data is passed
@@ -73,107 +67,149 @@ function onPlayerStateChange(event){
         console.log("is paused " + paused);
 
     }
+    if(event.data == 0){
+        var ended = event.data;
+        console.log("vid ended " + ended);
+    }
+
 }
 
 
-//the $(eslector) will be a button to click
+//jquery button clicks
 $('.play').click(function(){
     player.playVideo();
-
-   // console.log("first video is: "+ player.getVideoUrl().split("v=")[1]);
-    //alert("The paragraph was clicked. PLAY");
 });
 
 $('.pause').click(function(){
     player.pauseVideo();
-    //alert("The paragraph was clicked. PAUSE");
 });
 
 $(".stop").click(function(){
     player.stopVideo();
-    //alert("The paragraph was clicked. STOP");
 });
 
 //ff click plays next video
-//found the active video now.....
 $(".ff").click(function(){
-
     player.nextVideo();
-
-
 });
 
 $(".rw").click(function(){
-
-
     player.previousVideo();
-
-
+  //  This function loads and plays the specified video in the playlist.
 });
 
 
 var buttonsDiv = document.getElementById('buttons');
 
+//creates the sidebar elements
+function addElement( ) {
 
-//youtube api should have a video index to tell where video is
-//for loop can check if videoindex = the img id of the button clicked
-//then it will switch to that video
 
-function addElement( ){
+    var playerList = player.getPlaylist();
 
-        var playerList = player.getPlaylist();
 
-    //console.log(playerList);
-//gets the video ID of each video and stores into array
-        for(var i=0; i<playerList.length; i++){
-            console.log(playerList[i]);
+    for (var j = 0; j < playerList.length; j++) {
+
+
+        var div = document.createElement('div');
+        var button = document.createElement('button');
+        var input = document.createElement('input');
+
+        div.setAttribute("id", "jDivs"/*+j*/);
+        input.setAttribute("id", "jDivs"/*+j*/);
+
+        div.setAttribute("class", "Vid" + j);
+        input.setAttribute("class", "Vid" + j);
+
+        var videoArray = [playerList];
+
+        console.log("vide array " + videoArray[j]);
+
+
+        input.type = 'image';
+        input.src = 'http://img.youtube.com/vi/' + playerList[j] + '/0.jpg';
+
+
+
+        button.appendChild(input);
+        div.appendChild(button);
+        buttonsDiv.appendChild(div);
+
+        console.log(player.getPlaylistIndex());
+
+
+//sidebar img click
+        $('.Vid'+j).click( makeFunction(j));
+
+        function makeFunction(x) {
+
+            return function(){
+                otherFunction(x);
+            }
+        }
+
+    }
+
+
+
+    //video div index encapsulation
+    function otherFunction(x){
+
+        var playList = player.getPlaylist();
+        var videoArray = [playerList];
+
+        console.log(x);
+        player.loadVideoById(videoArray[0][x]);
+        console.log(videoArray[0][x]);
+
+
+       $(".ff").click( ffFunction(x));
+        $(".rw").click( rwFunction(x));
+
+        //fast forward function
+        function ffFunction(k){
+
+            return function(){
+                k++;
+                fFunction(k);
+            }
+        }
+
+//rewind function
+        function rwFunction(k){
+
+            return function(){
+                k--;
+                fFunction(k);
+            }
+        }
+
+    }
+
+    //used for fastforward and rewind buttons while in player sidebar
+        function fFunction(k){
+            var playList = player.getPlaylist();
+            var videoArray = [playerList];
+
+           // var newPlayed = player.getPlaylistIndex()+5;
+
+            console.log("k before "+ k);
+
+            if(k <= 0){
+
+                player.loadVideoById(videoArray[0][playerList.length-1]);
+
+            }
+            else if(k>= playerList.length){
+                console.log("INTEL");
+                player.loadVideoById(videoArray[0][0]);
+
+            }
+            else{
+                player.loadVideoById(videoArray[0][k]);
+
+            }
+
 
         }
 
-
-    //trying to forloop div to create divs for the amount of playlist videos
-
-    var counter = 0;
-        for(var j = 0; j<playerList.length; j++){
-
-            var div = document.createElement('div');
-            var button = document.createElement('button');
-            var input = document.createElement('input');
-
-            div.setAttribute("id","jDivs");
-            input.setAttribute("id","jDivs");
-
-
-            //var img = document.createElement('img'); //src="http://img.youtube.com/vi/" +PlayerList[i] + "/0.jpg" class="img-rounded">
-            input.type = 'image';
-            counter++;
-            input.src = 'http://img.youtube.com/vi/' + playerList[j]+ '/0.jpg';
-
-
-
-            //img = 'src="http://img.youtube.com/vi/' +playerList[i]+ '/0.jpg" class="img-rounded" ';
-            //button.onclick = player.loadVideoById('1blZpyhlRJA');
-
-            button.appendChild(input);
-            div.appendChild(button);
-            buttonsDiv.appendChild(div);
-
-                //button.push(button);
-                //List.appendChild(div);
-
-            var k=0;
-
-            button.onclick = function () {
-
-                player.loadVideoById(playerList[k++]);
-                console.log("thsi is " +playerList[k++]);
-            };
-
-
-        }
-
-
-
-}
-
-////////////////////////////////////////////////

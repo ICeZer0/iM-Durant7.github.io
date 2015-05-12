@@ -111,7 +111,7 @@
 
     #sidebar-wrapper {
         /*  modify sidebar-wrapper to change the size of the sideBar  */
-        width: 300px;
+        width: 250px;
     }
 
     #wrapper.toggled #sidebar-wrapper {

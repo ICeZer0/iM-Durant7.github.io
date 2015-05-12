@@ -368,25 +368,30 @@ img {
     /*padding-bottom: 35.25%;*/
     padding-top: 5%;
     /*padding-top: 1%;*/
-    left: 15%;
+    left: 5%;
 
 
 }
 
 #buttons{
-    /*position: relative;*/
-    /*left: auto;*/
-
-
+    position: relative;
+    left: auto;
 
 }
+
 
 #jDivs{
 
     display: inline-block;
     width: 120px;
     height: 120px;
-    /*right: auto;*/
+    right: auto;
 
 }
+
+
+#container{
+    pointer-events: none;
+}
+
 
