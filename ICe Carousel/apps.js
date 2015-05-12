@@ -130,7 +130,6 @@ function addElement( ) {
         input.src = 'http://img.youtube.com/vi/' + playerList[j] + '/0.jpg';
 
 
-
         button.appendChild(input);
         div.appendChild(button);
         buttonsDiv.appendChild(div);
@@ -139,11 +138,11 @@ function addElement( ) {
 
 
 //sidebar img click
-        $('.Vid'+j).click( makeFunction(j));
+        $('.Vid' + j).click(makeFunction(j));
 
         function makeFunction(x) {
 
-            return function(){
+            return function () {
                 otherFunction(x);
             }
         }
@@ -151,9 +150,8 @@ function addElement( ) {
     }
 
 
-
     //video div index encapsulation
-    function otherFunction(x){
+    function otherFunction(x) {
 
         var playList = player.getPlaylist();
         var videoArray = [playerList];
@@ -163,22 +161,22 @@ function addElement( ) {
         console.log(videoArray[0][x]);
 
 
-       $(".ff").click( ffFunction(x));
-        $(".rw").click( rwFunction(x));
+        $(".ff").click(ffFunction(x));
+        $(".rw").click(rwFunction(x));
 
         //fast forward function
-        function ffFunction(k){
+        function ffFunction(k) {
 
-            return function(){
+            return function () {
                 k++;
                 fFunction(k);
             }
         }
 
 //rewind function
-        function rwFunction(k){
+        function rwFunction(k) {
 
-            return function(){
+            return function () {
                 k--;
                 fFunction(k);
             }
@@ -187,29 +185,29 @@ function addElement( ) {
     }
 
     //used for fastforward and rewind buttons while in player sidebar
-        function fFunction(k){
-            var playList = player.getPlaylist();
-            var videoArray = [playerList];
+    function fFunction(k) {
+        var playList = player.getPlaylist();
+        var videoArray = [playerList];
 
-           // var newPlayed = player.getPlaylistIndex()+5;
+        // var newPlayed = player.getPlaylistIndex()+5;
 
-            console.log("k before "+ k);
+        console.log("k before " + k);
 
-            if(k <= 0){
+        if (k <= 0) {
 
-                player.loadVideoById(videoArray[0][playerList.length-1]);
-
-            }
-            else if(k>= playerList.length){
-                console.log("INTEL");
-                player.loadVideoById(videoArray[0][0]);
-
-            }
-            else{
-                player.loadVideoById(videoArray[0][k]);
-
-            }
-
+            player.loadVideoById(videoArray[0][playerList.length - 1]);
 
         }
+        else if (k >= playerList.length) {
+            console.log("INTEL");
+            player.loadVideoById(videoArray[0][0]);
+
+        }
+        else {
+            player.loadVideoById(videoArray[0][k]);
+
+        }
+
+    }
+}
 
