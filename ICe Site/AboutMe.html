@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>About Isaac</title>
+    <link href="Site Style.css" rel="stylesheet"/>
+
+    <!--Jquery-->
+    <script src="assets/plugins/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap-theme.min.css">
+    <!-- mini bootstrap -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="assets/plugins/font-awesome-4.3.0/css/font-awesome.css">
+
+    <style type="text/css">
+        .modal-dialog {}
+        .thumbnail {margin-bottom:6px;}
+
+        .carousel-control.left,.carousel-control.right{
+            background-image:none;
+            margin-top:10%;
+            width:5%;
+        }
+    </style>
+
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <img class="profile-image img-responsive pull-left" src="img/GoodLookingGuy.png" alt="Isaac Durant" />
+        <div class="profile-content pull-left">
+            <h1 class="name">Isaac Durant</h1>
+            <h2 class="desc">Computer Engineer</h2>
+
+        </div><!--//profile-->
+        <a href="http://isaacdurant.com">
+            <i style="float: right" class="fa fa-step-backward fa-3x"> HOME</i>
+        </a>
+    </div><!--//container-->
+</header><!--//header-->
+
+<div style="background-color: #214e62;">
+<p style="font-size: 17px; color: white">
+    I currently am developing my scripting language skills in order to market myself by creating my own websites and
+    designing different applications for school. I currently work in our Visualization Lab on campus where we utilize
+    new technology such as the Oculus Rift to develop software for education. We think differently and are trying to make
+    the learning experience fun and engaging. I am a Computer Engineer Student with an emphasis in Hardware but currently
+    work with a lot higher level languages such as C# and C++. I am kind of an arts guy so using javaScript is fun.
+    I like to put together different APIs in order to make my projects look cool as well as work uniquely.
+
+    <p>
+
+    </p>
+
+
+<p style="font-size: 17px; color: white">
+    I love cars, family, and technology. I live in Minnesota where I attend St. Cloud State University. I love to travel It would be
+    the greatest experience to go to space. I enjoy reading about all the new technology coming out I stay up to date on it.
+    My dream car is a 2015 skyline GTR and my future car will be a Tesla. I love the way technology is moving the world forward
+    and it is something that I always wanted to be apart of ever since I was young!
+
+</p>
+
+</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <h1>Some Things I like</h1>
+        <div class="row">
+            <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="img/model.jpg"><img class="thumbnail img-responsive" src="img/model.jpg"></a></div>
+            <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 2" href="img/skyline.jpg"><img class="thumbnail img-responsive" src="img/skyline.jpg"></a></div>
+            <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 3" href="img/gf.jpg"><img class="thumbnail img-responsive" src="img/gf.jpg"></a></div>
+            <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 4" href="img/space-metal.jpg"><img class="thumbnail img-responsive" src="img/space-metal.jpg"></a></div>
+            <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 5" href="img/tech.jpg"><img class="thumbnail img-responsive" src="img/tech.jpg"></a></div>
+            <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 6" href="img/rift.jpg"><img class="thumbnail img-responsive" src="img/rift.jpg"></a></div>
+            <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 8" href="img/japan.jpg"><img class="thumbnail img-responsive" src="img/japan.jpg"></a></div>
+            <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 9" href="img/steak.jpg"><img class="thumbnail img-responsive" src="img/steak.jpg"></a></div>
+            <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 10" href="img/family.jpg"><img class="thumbnail img-responsive" src="img/family.jpg"></a></div>
+            <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 11" href="img/nsbe.jpg"><img class="thumbnail img-responsive" src="img/nsbe.jpg"></a></div>
+            <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 12" href="img/coding.jpg"><img class="thumbnail img-responsive" src="img/coding.jpg"></a></div>
+            <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 13" href="img/tesla.jpg"><img class="thumbnail img-responsive" src="img/tesla.jpg"></a></div>
+            <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 13" href="img/MagAzine.png"><img class="thumbnail img-responsive" src="img/MagAzine.png"></a></div>
+        </div>
+
+
+
+    </div>
+</div>
+<div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">×</button>
+                <h3 class="modal-title"></h3>
+            </div>
+            <div class="modal-body">
+                <div id="modalCarousel" class="carousel">
+
+                    <div class="carousel-inner">
+
+                    </div>
+
+                    <a class="carousel-control left" href="#modaCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                    <a class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    /* copy loaded thumbnails into carousel */
+    $('.row .thumbnail').on('load', function() {
+
+    }).each(function(i) {
+        if(this.complete) {
+            var item = $('<div class="item"></div>');
+            var itemDiv = $(this).parents('div');
+            var title = $(this).parent('a').attr("title");
+
+            item.attr("title",title);
+            $(itemDiv.html()).appendTo(item);
+            item.appendTo('.carousel-inner');
+            if (i==0){ // set first item active
+                item.addClass('active');
+            }
+        }
+    });
+
+    /* activate the carousel */
+    $('#modalCarousel').carousel({interval:false});
+
+    /* change modal title when slide changes */
+    $('#modalCarousel').on('slid.bs.carousel', function () {
+        $('.modal-title').html($(this).find('.active').attr("title"));
+    })
+
+    /* when clicking a thumbnail */
+    $('.row .thumbnail').click(function(){
+        var idx = $(this).parents('div').index();
+        var id = parseInt(idx);
+        $('#myModal').modal('show'); // show the modal
+        $('#modalCarousel').carousel(id); // slide carousel to selected
+
+    });
+
+</script>
+
+</body>
+</html>
